@@ -7,8 +7,9 @@ class DeliveryCostCalculator {
 
   calculateFor(cart) {
     // calculated by the number of distinct categories in the cart
-    const numberOfDeliveries = Object.keys(cart.detailInfo.productCategories)
-      .length;
+    const numberOfDeliveries = Object.keys(
+      cart.getDetailInfo().productCategories
+    ).length;
 
     // number of different products in the cart.
     const numberOfProducts = cart._productsWithQuantities.length;
