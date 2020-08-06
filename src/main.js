@@ -49,8 +49,8 @@ const main = () => {
   const deliveryCostCalculator = new DeliveryCostCalculator(10, 3, 2.99);
   const deliveryCost = deliveryCostCalculator.calculateFor(cart);
 
-  console.log("Detail Info of the Cart:", cart.detailInfo);
-  console.log("Total Amount:", cart.detailInfo.totalDiscountedPrice);
+  console.log("Detail Info of the Cart:", cart.getDetailInfo());
+  console.log("Total Amount:", cart.getDetailInfo().totalDiscountedPrice);
   console.log("Delivery Cost:", deliveryCost);
 };
 

@@ -12,7 +12,7 @@ class ShoppingCart {
     };
   }
 
-  get detailInfo() {
+  getDetailInfo() {
     return this._productsWithDiscounts;
   }
 
