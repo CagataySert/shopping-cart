@@ -4,6 +4,7 @@ const Product = require("./product");
 const Campaign = require("./campaign");
 const Coupon = require("./coupon");
 const Cart = require("./shopping-cart");
+const DeliveryCostCalculator = require("./delivery-cost-calculator");
 
 const main = () => {
   // #region category start
@@ -44,7 +45,13 @@ const main = () => {
 
   cart.applyDiscounts(firstCampaign, secondCampaign, thirdCampaign);
   cart.applyCoupon(firstCoupon, secondCoupon);
-  console.log(cart.detailInfo);
+
+  const deliveryCostCalculator = new DeliveryCostCalculator(10, 3, 2.99);
+  const deliveryCost = deliveryCostCalculator.calculateFor(cart);
+
+  console.log("Detail Info of the Cart:", cart.detailInfo);
+  console.log("Total Amount:", cart.detailInfo.totalDiscountedPrice);
+  console.log("Delivery Cost:", deliveryCost);
 };
 
 main();
